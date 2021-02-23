@@ -1,0 +1,7 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Everton Lopes Costa <everton.lopess@outlook.com>",
+  "license": "MIT"
+}

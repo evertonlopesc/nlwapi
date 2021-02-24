@@ -1,5 +1,12 @@
 # nlwapi
 
+![](https://img.shields.io/badge/Made_With-_-grey)
+![](https://img.shields.io/badge/_-Typescript-blue)
+![](https://img.shields.io/badge/_-Javascript-yellow)
+![](https://img.shields.io/badge/_-TypeORM-orange)
+![](https://img.shields.io/badge/_-Git-red)
+![](https://img.shields.io/badge/_-Github-black)
+
 Curso Rocketseat
 
 <img src="https://cdn.discordapp.com/attachments/694609874197151754/813851700011335730/NLW04_pack_divulgacao_-_Github.png" alt="Banner NLW#4 Rocketseat">

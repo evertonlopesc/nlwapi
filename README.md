@@ -56,7 +56,9 @@ yarn add ts-node-dev -D
 
 package.json - criar linha:
 ~~~~Json
-scripts {dev: ts-node-dev src/server.ts}
+scripts {
+    "dev": "ts-node-dev src/server.ts"
+}
 ~~~~
 
 package.json - adicionar no scripts 
@@ -160,7 +162,7 @@ public async up(queryRunner: QueryRunner): Promise<void> {
 
 add em ormconfig.json o caminho para salvar os arquivos criados pela migration:rum
 ~~~~Trypscript
-<"migrations": ["./src/database/migrations/**.ts"],>
+"migrations": ["./src/database/migrations/**.ts"],
 ~~~~
 
 Criar os dados no DB Sqlite

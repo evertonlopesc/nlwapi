@@ -77,3 +77,17 @@ import { createConnection } from "typeorm";
 
 add no arquivo server.ts importar reflect-metadata e ./database
 obs.: reflect-metadata torna-se o primeiro import do arquivo.
+
+add no arquivo package.json em scripts {
+"typeorm": "ts-node-dev node_modules/typeorm/cli.js"
+}
+
+criar diretório .src/database/migrateions/
+
+add no arquivo ormconfig.json {
+"cli": {
+"migrationsDir": "./src/database/migrations"
+}
+}
+
+o caminha para direcionar as migrations criadas.

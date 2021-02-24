@@ -1,13 +1,13 @@
-![](https://img.shields.io/badge/Maintenance-</>-brightgreen)
+![](https://img.shields.io/badge/Maintenance-</>-brightgreen?style=flat-square)
 
 # nlwapi
 
-![](https://img.shields.io/badge/Made_With-_-grey)
-![](https://img.shields.io/badge/_-Typescript-blue)
-![](https://img.shields.io/badge/_-Javascript-yellow)
-![](https://img.shields.io/badge/_-TypeORM-orange)
-![](https://img.shields.io/badge/_-Git-red)
-![](https://img.shields.io/badge/_-Github-black)
+![](https://img.shields.io/badge/Made_With-_-grey?style=flat-square)
+![](https://img.shields.io/badge/_-Typescript-blue?style=flat-square)
+![](https://img.shields.io/badge/_-Javascript-yellow?style=flat-square)
+![](https://img.shields.io/badge/_-TypeORM-orange?style=flat-square)
+![](https://img.shields.io/badge/_-Git-red?style=flat-square)
+![](https://img.shields.io/badge/_-Github-black?style=flat-square)
 
 Curso Rocketseat
 

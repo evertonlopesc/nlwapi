@@ -109,3 +109,9 @@ isPrimary: true
 })
 );
 }>
+
+add em ormconfig.json o caminho para salvar os arquivos criados pela migration:rum
+
+<"migrations": ["./src/database/migrations/**.ts"],>
+
+<run ~ yarn typeorm migration:run>

@@ -6,25 +6,43 @@ Curso Rocketseat
 
 ## Meu passo à passo
 
-#### Estou anotando, versionando e compartilhando aqui no Github a fim de aprender mais refazendo ele.
+#### Estou anotando, versionando e compartilhando aqui no Github a fim de aprender mais explicando ele. Estarei atualizando até finalizar.
 
-Criar Pasta #
+Criar Pasta do projeto
 
-run ~ yarn init -y #cria um package, o -y criar as informações com o que tem, default.
+> cria um package, o -y criar as informações com o que tem, default.
+~~~~Shell
+yarn init -y 
+~~~~
 
-run ~ yarn add express #micro framework e mais utilizados
+> micro framework e mais utilizados
+~~~~Shell
+yarn add express 
+~~~~
 
 criar pasta src
 
 criar dentro da pasta src/ o arquivo server.ts
 
-run ~ yarn add @types/express -D # com -D a dependencia vai ficar apenas em desenvolvimento.
+> com -D a dependencia vai ficar apenas em desenvolvimento.
+~~~~Shell
+yarn add @types/express -D # 
+~~~~
 
-add no arquivo server.ts: app.Listen(porta, () => mensagem)
+add no arquivo 
+~~~~Typescript
+server.ts: app.Listen(porta, () => mensagem)
+~~~~
 
-run ~ yarn add typescript -D # para o node identificar o arquivo server.ts a rodar o servidor criado.
+para o node identificar o arquivo server.ts ao rodar o servidor criado.
+~~~~Shell
+yarn add typescript -D 
+~~~~
 
-run ~ yarn tsc --init # inicializa o typescript na aplicação
+inicializa o typescript na aplicação
+~~~~Shell
+yarn tsc --init # 
+~~~~
 
 alterar arquivo tsconfig.json, strict = false.
 
@@ -34,10 +52,11 @@ package.json - criar linha "scripts {dev: ts-node-dev src/server.ts}"
 
 package.json - adicionar no scripts dev: "--trasnspile-only --ignore-watch node_modules"
 
+~~~~Typescript
 server.ts {
-app.get("/users", (request, response) => {
-return response.send("Hello world - NLW#04")
-}); Antigo
+//    app.get("/users", (request, response) => {
+//       return response.send("Hello world - NLW#04")
+//    }); Antigo
 
     app.get("/", (request, response) => {
         return response.json({ message: "Hello world - NLW#04"});
@@ -48,6 +67,7 @@ return response.send("Hello world - NLW#04")
     });
 
 }
+~~~~
 
 Install Insomnia: [Site Insomnia](https://insomnia.rest/)
 

@@ -26,7 +26,7 @@ criar dentro da pasta src/ o arquivo server.ts
 
 > com -D a dependencia vai ficar apenas em desenvolvimento.
 ~~~~Shell
-yarn add @types/express -D # 
+yarn add @types/express -D
 ~~~~
 
 add no arquivo 
@@ -41,16 +41,28 @@ yarn add typescript -D
 
 inicializa o typescript na aplicação
 ~~~~Shell
-yarn tsc --init # 
+yarn tsc --init
 ~~~~
 
-alterar arquivo tsconfig.json, strict = false.
+alterar arquivo tsconfig.json, 
+~~~~Json
+strict = false.
+~~~~
 
-run ~ yarn add ts-node-dev -D # converte o arquivo o arquivo em tempo de execução.
+converte o arquivo em tempo de execução.
+~~~~Shell
+yarn add ts-node-dev -D 
+~~~~
 
-package.json - criar linha "scripts {dev: ts-node-dev src/server.ts}"
+package.json - criar linha:
+~~~~Json
+scripts {dev: ts-node-dev src/server.ts}
+~~~~
 
-package.json - adicionar no scripts dev: "--trasnspile-only --ignore-watch node_modules"
+package.json - adicionar no scripts 
+~~~~Json
+dev: "--trasnspile-only --ignore-watch node_modules"
+~~~~
 
 ~~~~Typescript
 server.ts {
@@ -71,67 +83,87 @@ server.ts {
 
 Install Insomnia: [Site Insomnia](https://insomnia.rest/)
 
-Configurando com TypeORM
+*Configurando com TypeORM*
 
 [Site TypeORM](https://typeorm.io/#/)
 
-run ~ yarn add typeorm reflect-metadata
+Adicionar ao projeto TypeORM e a dependencia reflect-metadata
+~~~~Shell
+yarn add typeorm reflect-metadata
+~~~~
 
-run ~ yarn add sqlite3
+Adicionar o sqlite como DB por ser fácil de utilizar sem grandes configurações.
+~~~~Shell
+yarn add sqlite3
+~~~~
 
-criar arquivo ormconfig,json {
+criar arquivo ormconfig.json
+~~~~Json
 {
-"type": "sqlite",
-"database": "./src/database/database.sqlite"
+    "type": "sqlite",
+    "database": "./src/database/database.sqlite"
 }
-}
+~~~~
 
 criar dentro de src um diretório database com o arquivo index.ts
 
-add no arquivo index.ts {
-import { createConnection } from "typeorm";
+add no arquivo index.ts
+~~~~Typescript
+{
+    import { createConnection } from "typeorm";
 
-    createConnection();
-
+        createConnection();
 }
+~~~~
 
-add no arquivo server.ts importar reflect-metadata e ./database
+add no arquivo server.ts 
+~~~~Typescript
+import "reflect-metadata"
+import "./database"
+~~~~
 obs.: reflect-metadata torna-se o primeiro import do arquivo.
 
-add no arquivo package.json em scripts {
+add no arquivo package.json em scripts
+~~~~Typescript
 "typeorm": "ts-node-dev node_modules/typeorm/cli.js"
-}
+~~~~
 
 criar diretório .src/database/migrateions/
 
-add no arquivo ormconfig.json {
+add no arquivo ormconfig.json
+~~~~Json
 "cli": {
-"migrationsDir": "./src/database/migrations"
+    "migrationsDir": "./src/database/migrations"
 }
-}
+~~~~
 
 o caminha para direcionar as migrations criadas.
 
 Criando a primeira migration Users
-
-<public async up(queryRunner: QueryRunner): Promise<void> {>
-<await queryRunner.createTable (
-new Table({
-name: "users",
-columns: [
-{
-name: "id",
-type: "uuid",
-isPrimary: true
-},
-...
-],
-})
-);
-}>
+~~~~Typescript
+public async up(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.createTable (
+        new Table({
+            name: "users",
+            columns: [
+                {
+                    name: "id",
+                    type: "uuid",
+                    isPrimary: true
+                },
+                ...
+            ],
+        })
+    );
+}
+~~~~
 
 add em ormconfig.json o caminho para salvar os arquivos criados pela migration:rum
-
+~~~~Trypscript
 <"migrations": ["./src/database/migrations/**.ts"],>
+~~~~
 
-<run ~ yarn typeorm migration:run>
+Criar os dados no DB Sqlite
+~~~~Shell
+yarn typeorm migration:run
+~~~~

@@ -94,8 +94,8 @@ o caminha para direcionar as migrations criadas.
 
 Criando a primeira migration Users
 
-public async up(queryRunner: QueryRunner): Promise<void> {
-await queryRunner.createTable (
+<public async up(queryRunner: QueryRunner): Promise<void> {>
+<await queryRunner.createTable (
 new Table({
 name: "users",
 columns: [
@@ -105,7 +105,7 @@ type: "uuid",
 isPrimary: true
 },
 ...
-]
+],
 })
-)
-}
+);
+}>

@@ -161,8 +161,10 @@ public async up(queryRunner: QueryRunner): Promise<void> {
 ~~~~
 
 add em ormconfig.json o caminho para salvar os arquivos criados pela migration:rum
-~~~~Trypscript
-"migrations": ["./src/database/migrations/**.ts"],
+~~~~Json
+{
+    "migrations": ["./src/database/migrations/**.ts"],
+}
 ~~~~
 
 Criar os dados no DB Sqlite

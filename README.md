@@ -1,3 +1,5 @@
+![](https://img.shields.io/badge/Maintenance-</>-brightgreen)
+
 # nlwapi
 
 ![](https://img.shields.io/badge/Made_With-_-grey)

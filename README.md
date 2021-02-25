@@ -300,3 +300,69 @@ yarn add uuid
 ```Shell
 yarn add @types/uuid -D
 ```
+
+Importar para o arquivo User.ts a biblioteca uuid
+
+```Typescript
+import { v4 as uuid } from "uuid";
+```
+
+Adicionar no arquivo User.ts readonly para o id do user
+
+```Typescript
+@PrimaryColumn()
+readonly id: string;
+```
+
+Criar no arquivo User.ts um construtor para tornar o id único usnado a biblioteca uuid
+
+```Typescript
+constructor() {
+    if(!this.id) {
+        this.id = uuid();
+    }
+}
+```
+
+Incluir no arquivo ormconfig.json o entities informando a rota do models
+
+```Json
+"entities": ["./src/models/**.ts"],
+```
+
+Altualizando o arquivo UserController.ts com create user
+
+```Typescript
+const user = userRepository.create({
+    name,
+    email,
+});
+```
+
+Altualizando o arquivo UserController.ts com save user
+
+```Typescript
+await userRepository.save(user);
+```
+
+Altualizando o arquivo UserController.ts com autenticação
+
+```Typescript
+//SELECT * FROM USERS WHERE EMAIL = "EMAIL"
+const userAlreadyExists = await userRepository.findOne({
+    email,
+});
+
+if (userAlreadyExists) {
+    return response.status(400).json({
+        error: "User already exists!",
+
+    });
+}
+```
+
+Adicionando para o ambiente de desenvolvimento no arquivo ormconfig.json a opção logging
+
+```Json
+"logging": true,
+```

@@ -209,3 +209,94 @@ yarn typeorm migration:revert
 ```
 
 Criar diretório ./src/controllers com o arquivo UserController.ts
+
+add no arquivo UserController.ts
+
+```Typescript
+import {Request, Response} from "express";
+
+class UserController {
+    async create(request: Request, response: Response) {
+        const body = request.body;
+        console.log(body);
+        return response.send();
+    }
+}
+
+export { UserController }
+```
+
+Criar o arquivo ./src/routes.ts
+
+add no arquivo routes.ts
+
+```Typescript
+import { Router } from "express";
+import { UserController } from "./controllers/UserController";
+
+const router = Router();
+
+const userController = new UserController();
+
+router.post("/users", userController.create);
+
+export { router };
+```
+
+Deletar no arquivos server.ts o post e get
+
+Incluir no arquivo server.ts chamadas as rotas para o controller e a opção de receber Json
+
+```Typescript
+app.use(express.json());
+app.use(router);
+
+```
+
+Criar o arquivo ./src/models e o arquivo models/User.ts
+
+add no arquivo User.ts
+
+```Typescript
+import { Entity } from "typeorm";
+
+@Entity("users")
+class User{
+
+}
+
+export { User }
+
+```
+
+No arquivo tsconfig.json, habilite a opção Experimental Options e stricPropertyInitialization, para o stric deixe ele com **false**
+
+Alterar o arquivo User.ts incluindo os atributos na classe
+
+```Typescript
+@Entity("users")
+class User{
+    @PrimaryColumn()
+    id: string;
+
+    @Column()
+    name: string;
+
+    @Column()
+    email: string;
+
+    @CreateDateColumn()
+    created_at: Date;
+}
+
+```
+
+Adicionar a biblioteca uuid e sua dependência
+
+```Shell
+yarn add uuid
+```
+
+```Shell
+yarn add @types/uuid -D
+```

@@ -7,10 +7,10 @@ class Survey {
     readonly id: string;
 
     @Column()
-    name: string;
+    title: string;
 
     @Column()
-    email: string;
+    description: string;
 
     @CreateDateColumn()
     created_at: Date;

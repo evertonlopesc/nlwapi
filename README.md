@@ -7,7 +7,6 @@
 ![](https://img.shields.io/badge/_-Javascript-yellow?style=flat-square)
 ![](https://img.shields.io/badge/_-TypeORM-orange?style=flat-square)
 ![](https://img.shields.io/badge/_-Git-red?style=flat-square)
-![](https://img.shields.io/badge/_-Github-black?style=flat-square)
 
 Curso Rocketseat
 
